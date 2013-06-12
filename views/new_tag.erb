@@ -1,0 +1,18 @@
+<h1> Add Tags </h1>
+
+<form method="post" action="/new_tag">
+	Tag Name: <input type="text" name="tag[text]">
+	<button>Save Tag</button>
+	<br>
+</form>
+
+<h2> Existing Tags </h2>
+<div>
+  <table>
+    <% @tags.each do |tag| %>
+      <tr>
+        <td><strong><%= tag.text %></strong></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

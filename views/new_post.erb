@@ -1,0 +1,20 @@
+<form method="post" action="/new_post">
+  Title of your post: 
+  <input type="text" name="post[title]">
+  Your name:  
+  <input type="text" name="author_name">
+
+  <input type="hidden" name="post[date]" value= "<%= Time.now%>" >
+
+  Write your post! 
+  <input type="text" name="post[text]">
+
+  Tags: 
+
+  <% Tag.all.each do |tag| %>
+    <input type="checkbox" name="post[tag_ids][]" value="<%= tag.id %>"><%= tag.text %>
+  <% end %>
+	<br>
+
+  <button>Save Post</button>
+</form>
